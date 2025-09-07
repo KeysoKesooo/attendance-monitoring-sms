@@ -1,0 +1,127 @@
+
+/* Container Styles */
+.container {
+  background-color: var(--main-bg-color);
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  width: 100%;
+  margin: auto;
+  padding: 0; /* Remove extra padding */
+}
+
+/* Base styles for desktop and larger screens */
+.job_cards_container {
+  padding: 50px 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns layout */
+  gap: 20px; /* Adjust gap between cards */
+  justify-content: center; /* Center the grid horizontally */
+  align-items: start; /* Align items at the start of the grid cell */
+  max-width: 1200px; /* Set a max-width for larger screens */
+  width: 100%;
+}
+
+
+.job_card {
+  width: 100%; /* Full width of the grid column */
+  position: relative;
+  padding: 15px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+  border-radius: 10px;
+  background: var(--secondary-color);
+  box-shadow: 10px 10px #343131;
+  transition: transform 0.3s ease;
+  box-sizing: border-box; /* Include padding and border in width */
+}
+
+.job_details {
+  display: flex;
+  flex-direction: column; /* Ensure elements are stacked vertically */
+  align-items: center; /* Center horizontally */
+  justify-content: center; /* Center vertically */
+  text-align: center; /* Center text within job_details */
+}
+
+.job_details .text {
+  margin-left: 0; /* Remove margin for proper alignment */
+}
+
+.job_details .text span {
+  color: var(--primary-color);
+}
+
+.job_card:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive Styles */
+
+/* For tablets and small laptops (between 768px and 1024px) */
+@media (max-width: 1024px) {
+  .job_cards_container {
+    grid-template-columns: repeat(2, 1fr); /* Two columns layout */
+    padding: 30px 0; /* Adjust padding */
+  }
+}
+
+/* For mobile devices (up to 768px) */
+@media (max-width: 900px) {
+
+  .main-top {
+    width: 100%;
+    height: 100px; /* Adjust height */
+    font-size: 16px;
+    padding: 6px;
+  }
+
+  .job_cards_container {
+    grid-template-columns: 1fr; /* One column layout */
+
+    margin: 0px 10px 0px 0px;
+  }
+}
+
+/* For mobile devices (up to 768px) */
+@media (max-width: 700px) {
+
+  .main-top {
+    width: 100%;
+    height: 100px; /* Adjust height */
+    font-size: 16px;
+    padding: 6px;
+  }
+
+  .job_cards_container {
+    grid-template-columns: 1fr; /* One column layout */
+
+    margin: 0px 10px 0px 0px;
+  }
+}
+
+/* For mobile devices (up to 768px) */
+@media (max-width: 500px) {
+
+  .main-top {
+    width: 100%;
+    height: 100px; /* Adjust height */
+    font-size: 16px;
+    padding: 6px;
+  }
+
+  .job_cards_container {
+    grid-template-columns: 1fr; /* One column layout */
+    margin: 0px 10px 0px 0px;
+  }
+}
+
+/* For very small mobile devices (up to 480px) */
+@media (max-width: 480px) {
+  .job_card {
+    padding: 10px 0px 0px 0px; /* Adjust padding */
+  }
+}
+
+
+

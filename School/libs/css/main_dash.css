@@ -1,0 +1,451 @@
+/*  import google fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body{
+  overflow-y: auto; 
+
+  background: var(--main-bg-color);
+  --main-bg-color: #F8FAFC;
+  --primary-color: #B19470;
+  --secondary-color: #780C28;
+  --triary-color: #76453B;
+  
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
+
+
+/* Base styles for export_button */
+.export_button {
+  width: 100px;
+  display: flex;
+  align-items: center;
+  padding: 15px 25px; /* Increased padding */
+  background-color: #488aec;
+  color: #ffffff;
+  font-size: 1rem; /* Increased font size */
+  line-height: 1.25rem; /* Adjusted line height */
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  vertical-align: middle;
+  border: none;
+  border-radius: 0.75rem; /* Slightly larger border radius */
+  gap: 1rem; /* Increased gap between icon and text */
+  cursor: pointer;
+  user-select: none;
+  box-shadow:
+    0 4px 6px -1px #FBFFE4,
+    0 2px 4px -1px #690B22;
+  text-decoration: none; /* No underline on normal state */
+  transition: all 0.6s ease;
+  right: 100px;
+}
+
+/* Remove underline on hover */
+.export_button:hover {
+  box-shadow:
+    0 10px 15px -3px #B3D8A8,
+    0 4px 6px -2px #690B22;
+  text-decoration: none; /* Ensures no underline on hover */
+}
+
+.export_button:focus,
+.export_button:active {
+  opacity: 0.85;
+  box-shadow: none;
+  text-decoration: none; /* Ensure no underline when focused or active */
+}
+
+/* Styles for the icon */
+.export_button__icon {
+  width: 1.5rem; /* Increased icon size */
+  height: 1.5rem; /* Increased icon size */
+  display: inline-block;
+}
+
+/* Styles for the text */
+.export_button__text {
+  font-size: 1rem; /* Matches the button's font size */
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+
+
+
+.input-container {
+  width: 220px;
+  position: relative;
+}
+
+.icon {
+  position: absolute;
+  right: 10px;
+  top: calc(50% + 5px);
+  transform: translateY(calc(-50% - 5px));
+}
+
+.input {
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+  transition: .2s linear;
+  border: 2.5px solid black;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.input:focus {
+  outline: none;
+  border: 0.5px solid black;
+  box-shadow: -5px -5px 0px black;
+}
+
+.input-container:hover > .icon {
+  animation: anim 1s linear infinite;
+}
+
+.back_button {
+  top: -10px;
+  left: 250px;
+  position: inherit;
+  display: flex;
+  height: 2em;
+  width: 100px;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border-radius: 3px;
+  letter-spacing: 1px;
+  transition: all 0.2s linear;
+  cursor: pointer;
+  border: none;
+  z-index: 1; /* Ensures the button is on top of other content */
+}
+
+.back_button > svg {
+  margin-right: 5px;
+  margin-left: 5px;
+  font-size: 20px;
+  transition: all 0.4s ease-in;
+}
+
+.back_button:hover > svg {
+  font-size: 1.2em;
+  transform: translateX(-5px);
+}
+ 
+
+
+.editpopup_container {
+
+  background-color: var(--main-bg-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+
+.editpopup_form_area {
+  box-shadow: 0 10px 10px 10px rgba(0, 0, 0, 0.2); /* Standard shadow effect */
+
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: var(--main-bg-color);
+  height: auto;
+  width: auto;
+  border: 2px solid #264143;
+  border-radius: 20px;
+}
+
+.editpopup_title {
+  color: #264143;
+  font-weight: 900;
+  font-size: 1.5em;
+  margin-top: 20px;
+}
+
+.editpopup_sub_title {
+  font-weight: 600;
+  margin: 5px 10px;
+}
+
+.editpopup_form_group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Ensure alignment is correct */
+  margin: 10px 0; /* Consistent spacing */
+}
+
+.editpopup_form_group input, .editpopup_form_group select {
+  width: 600px; /* Make input take full width */
+  margin: 0px 10px 0px 10px;
+  font-size: 15px;
+  border: 2px solid #264143;
+}
+
+#phoneField {
+  display: none; /* Initially hide the phone field */
+}
+
+
+.editpopup_form_style {
+  outline: none;
+  border: 2px solid #264143;
+
+  width: 290px;
+  padding: 12px 10px;
+  border-radius: 4px;
+  font-size: 15px;
+}
+
+.editpopup_form_style:focus, .btn:focus {
+  transform: translateY(4px);
+  box-shadow: 1px 2px 0px 0px var(--secondary-color);
+}
+
+.editpopup_btn {
+  padding: 15px;
+  margin: 25px 0px;
+  width: 280px;
+  font-size: 15px;
+  background: var(--secondary-color);
+  border-radius: 10px;
+  font-weight: 800;
+  color: white;
+}
+
+.gen_report {
+  padding: 15px;
+  font-size: 15px;
+  background: #DE5499;
+  border-radius: 10px;
+  font-weight: 800;
+  box-shadow: 3px 3px 0px 0px var(--secondary-color);
+  margin: 0 auto; /* Horizontal centering */
+  display: block;
+  width: fit-content; /* Adjust the width to fit the content */
+}
+
+.editpopup_btn:hover {
+  opacity: .9;
+}
+
+.link {
+  font-weight: 800;
+  color: #264143;
+  padding: 5px;
+}
+
+
+
+
+.profile_con {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.profile_img { 
+  margin: 0px 10px 0px 230px;
+  width: 150px; /* Adjust the width as needed */
+  height: 150px; /* Adjust the height as needed */
+  border-radius: 50%; /* Makes the image a circle */
+  opacity: 1;
+  display: block;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.img_text {
+  position: absolute;
+  top: 80px;
+  left: 330px;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: .5s ease;
+  opacity: 0;
+}
+
+
+
+.img_text h1 {
+  position: absolute;
+  top: 50%;
+  left: 180px;
+  transform: translate(-60%, -50%);
+  color: #17153B; /* Adjust as needed for contrast */
+  z-index: 0; /* Places the h1 behind the input field */
+  pointer-events: none; /* Ensures that clicks pass through the h1 */
+}
+
+.text_img {
+  position: relative;
+  padding: 10px  10px;
+  width: 100px; /* Set the width equal to the height */
+  height: 100px; /* Set the height equal to the width */
+  border-radius: 80px; /* Makes the element a circle */
+  line-height: 1; /* Reset line height */
+  display: flex; 
+  border: none;
+}
+
+.img_upload {
+  position: relative;
+  top: 90px;
+  right: 205px;
+  padding: 0px 0px 0px 0px;
+  width: 100px;
+  font-size: 15px;
+  background: #DE5499;
+  border-radius: 10px;
+  font-weight: 800;
+  box-shadow: 3px 3px 0px 0px #E99F4C;
+}
+
+.profile_con:hover .profile_img {
+  opacity: 0.3;
+}
+
+.profile_con:hover .img_text {
+  opacity: 1;
+}
+@media screen and (max-width: 768px) {
+  .editpopup_form_area {
+    width: 90%;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .editpopup_form_group input,
+  .editpopup_form_group select,
+  .editpopup_form_style {
+    width: 100%;
+    margin: 5px 0;
+    font-size: 14px;
+  }
+
+  .editpopup_btn,
+  .gen_report {
+    width: 100%;
+    font-size: 14px;
+    padding: 12px;
+    margin-top: 15px;
+  }
+
+  .editpopup_title {
+    font-size: 1.2em;
+    margin-top: 10px;
+  }
+
+  .editpopup_sub_title {
+    font-size: 14px;
+    margin: 5px 0;
+  }
+
+}
+
+
+
+@media screen and (max-width: 768px) {
+
+  
+  .profile_con {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    padding: 20px 0;
+  }
+
+  .profile_img {
+    margin: 0;
+    width: 100px;
+    height: 100px;
+  }
+
+  .img_text {
+    position: static;
+    transform: none;
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    opacity: 1;
+    margin-top: 10px;
+  }
+
+  .img_text h1 {
+    position: static;
+    transform: none;
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .text_img {
+    margin: 0;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .img_upload {
+    position: static;
+    margin-top: 15px;
+    width: 80%;
+    font-size: 14px;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .profile_con:hover .profile_img {
+    opacity: 1;
+  }
+
+  .profile_con:hover .img_text {
+    opacity: 1;
+  }
+
+  .back_button{
+    display: none;
+  }
+}
+
+
+
+
+
+
+
+

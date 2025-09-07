@@ -1,0 +1,219 @@
+
+
+/* Main Section */
+.main{
+  width: 100%;
+}
+
+body {
+  width: 100%;
+  height: 600px; /* Set a fixed height for the scrollable area */
+  overflow-y: auto; /* Enable vertical scrolling */
+  box-sizing: border-box; /* Ensure padding is included in height */
+}
+
+.sec {
+  background-color: var(--secondary-color);
+  margin: 0px 365px 0 auto; /* Adjusted margin for symmetry */
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  overflow: hidden;
+  height: 100px;
+  width: 500px;
+  border-radius: 20px 20px ; /* Horizontal radius is 50%, vertical radius is 20% */
+}
+
+
+.sec span {
+  font-size: 30px;
+  color: var(--main-bg-color);
+}
+
+.main-body {
+  text-align: center;
+}
+
+@keyframes anim {
+  0%,
+  100% {
+      transform: translateY(calc(-50% - 5px)) scale(1);
+  }
+
+  50% {
+      transform: translateY(calc(-50% - 5px)) scale(1.1);
+  }
+}
+
+
+/* BODY */
+
+.card_container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px; /* Adjusted gap */
+  padding: 20px;
+}
+
+.card {
+  --main-color: #000;
+  --submain-color: #343131;
+  --bg-color: white;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  position: relative;
+  width: 200px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  background: var(--bg-color);
+  border: 1px solid #ddd;
+  overflow: hidden;
+}
+
+.card__img {
+  background: url('/methanoiah/images/methanoiah_logo.png') no-repeat center;
+  height: 100px;
+  width: 100%;
+  background-size: 110px;
+  background-color: var(--secondary-color);
+
+
+}
+
+
+.card__avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.card__avatar img {
+  width: 100%;
+  height: auto;
+}
+
+.card__title {
+  margin-top: 10px;
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--main-color);
+}
+
+.card__subtitle {
+  margin-top: 5px;
+  font-weight: 400;
+  font-size: 12px;
+  color: var(--submain-color);
+}
+
+
+/* Media Queries */
+
+/* Mobile Devices */
+@media (max-width: 600px) {
+  .sec {
+      margin: 100px 0px 0px 20px;
+      width: 100%;
+      height: auto;
+  }
+
+  .sec span {
+      font-size: 24px;
+  }
+
+  .card_container {
+    grid-template-columns: repeat(2, 1fr); /* Two columns layout for tablets */
+    gap: 15px; /* Adjusted gap between cards */
+}
+
+  .card {
+      width: 50%; /* Full width on mobile */
+      height: 30%; /* Auto height to fit content */
+      margin: 10px 0; /* Vertical margin on mobile */
+  }
+
+  .card__avatar {
+      margin-top: 10px; /* Reduce space above the avatar */
+  }
+
+  .card__title {
+      font-size: 12px;
+  }
+
+  .card__subtitle {
+      font-size: 10px;
+  }
+  
+  p {
+    margin: 30px 0px 0px 20px;
+  }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  .main-top {
+    width: 100%;
+    height: 100px; /* Adjust height */
+    font-size: 16px;
+    padding: 6px;
+
+  }
+
+  .card_container {
+      grid-template-columns: repeat(2, 1fr); /* Two columns layout for tablets */
+      gap: 15px; /* Adjusted gap between cards */
+  }
+
+  .card {
+      width: 50%; /* Full width of its grid cell */
+      height: 50%; /* Auto height to fit content */
+  }
+
+  .card__avatar {
+      margin-top: 20px; /* Adjust space above the avatar */
+  }
+
+  .card__title {
+      font-size: 14px;
+  }
+
+  .card__subtitle {
+      font-size: 12px;
+  }
+}
+
+/* Small Desktops */
+@media (max-width: 1024px) {
+  .card_container {
+      grid-template-columns: repeat(2, 1fr); /* Two columns layout for small desktops */
+      gap: 5px; /* Adjusted gap between cards */
+  }
+
+  .card {
+      width: 90%; /* Full width of its grid cell */
+      height: auto; /* Auto height to fit content */
+  }
+
+  .card__avatar {
+      margin-top: 30px; /* Adjust space above the avatar */
+  }
+
+  .card__title {
+      font-size: 16px;
+  }
+
+  .card__subtitle {
+      font-size: 14px;
+  }
+}
+
