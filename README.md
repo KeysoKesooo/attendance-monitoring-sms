@@ -18,3 +18,12 @@ A PHP-based attendance monitoring system that allows students or employees to lo
 - **Libraries**: PHP QR Code, SMS API (IPROGRAM)  
 
 ## 📂 Project Structure
+
+attendance-monitoring-sms/
+│── index.php # QR scanner + attendance logging
+│── process_qr_code.php # Handles attendance logic
+│── config.php # Database and API configuration
+│── sms_api.php # SMS sending logic
+│── assets/ # CSS, JS, images
+│── exports/ # Generated CSV reports
+│── README.md
